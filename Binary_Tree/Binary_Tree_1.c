@@ -12,7 +12,6 @@ struct tree
 typedef struct tree treenode;
 typedef treenode *b_tree;
 
-
 b_tree insert_node(b_tree root, int node)
 {
 	b_tree newnode;
@@ -32,12 +31,15 @@ b_tree insert_node(b_tree root, int node)
 		currentnode = root;
 		while (currentnode != NULL)
 		{
-			parentnode = currentnode;
+			/* Put current to be end node */
+			parentnode = currentnode; 
 			if(currentnode->data > node)
 				currentnode = currentnode->left;
 			else
 				currentnode = currentnode->right;
 		}
+		printf("\n");
+		/* Put new node as parent node */
 		if(parentnode->data > node)
 			parentnode->left = newnode;
 		else
@@ -54,7 +56,6 @@ b_tree create_btree(int *data, int len)
 	
 	for (i = 0; i < len; i++)
 	{
-		//printf("%d ",data[i]);
 		root = insert_node(root, data[i]);
 	}
 	
