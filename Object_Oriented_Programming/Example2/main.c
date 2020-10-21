@@ -4,9 +4,7 @@
 int main()
 {
 	Cow* cow = new_cow();
-	
-	Animal* animal_cow = (Animal*) cow;
-	animal_cow->speek(animal_cow);
+	cow->speek((Animal*)cow);
 	
 	return 0;
 }

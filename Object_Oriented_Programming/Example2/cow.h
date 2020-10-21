@@ -6,6 +6,7 @@
 typedef struct COW_STRUCT
 {
 	Animal base;
+	void (*speek)(Animal* animal);
 } Cow;
 
 Cow *new_cow();
